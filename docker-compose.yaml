@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  pulsar:
+    image: apachepulsar/pulsar:2.10.2
+    command: "bin/pulsar standalone"
+    ports:
+        - '7128:8080'
+        - '6650:6650'
+    volumes:
+        - pulsar_data:/pulsar/data
+        - pulsar_conf:/pulsar/conf
+
+volumes:
+  pulsar_data:
+  pulsar_conf:
